@@ -9,6 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,10 +28,11 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @EqualsAndHashCode(callSuper = true, exclude = "reservations")
 public class Schedule extends BaseEntity<Long> {
 
-    @ManyToOne
+    @ManyToOne(optional =true)
     @NotNull
     private TennisCourt tennisCourt;
 

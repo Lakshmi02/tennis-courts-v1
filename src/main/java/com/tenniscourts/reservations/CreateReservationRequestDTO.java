@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,9 +19,11 @@ import javax.validation.constraints.NotNull;
 public class CreateReservationRequestDTO {
 
     @NotNull
+    @Positive
     private Long guestId;
 
     @NotNull
+    @Positive
     private Long scheduleId;
 
 }
